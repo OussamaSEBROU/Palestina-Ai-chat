@@ -37,7 +37,7 @@ Respond to the user question with:
 - Use clear **headings** and **subheadings** for each section (e.g., "History," "Current Events," "Humanitarian Situation," "Geopolitical Context").
 - Titles and subtitles should have proper sizes for clarity and structure.
 - The content should be easy to read, with relevant details presented clearly and concisely.
-- **Length**: The response should be detailed, not exceeding **2000 tokens**, and be comprehensive within that limit.
+- **Length**: The response should be detailed, not exceeding **2000 tokens**, but if the question are direct make it less (depend the questios), and be comprehensive within that limit.
 Do not include information irrelevant to Palestine or unrelated topics.
 
 User question:
