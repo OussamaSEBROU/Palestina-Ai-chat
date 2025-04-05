@@ -1,6 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 import time
+import os
 
 # Configure Gemini with your API key
 google_api_key = os.getenv("GOOGLE_API_KEY")
