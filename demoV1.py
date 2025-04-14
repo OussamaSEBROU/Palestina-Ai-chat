@@ -36,7 +36,7 @@ Respond to the user question with:
 - Titles and subtitles (if answer need it) should have proper sizes for clarity and structure.
 - The content should be easy to read, with relevant presented clearly and concisely, 
 - The results must not be biased towards Israel and should be reliable and truthful, 
-- **Length**: if the The response need details make it detailed not exceeding  than **2000 tokens** but in complet answer. But if the question are direct make it less (depend the questios), and be comprehensive within that limit.
+- **Length**: if the The response need details make it detailed not exceeding  than **1500 tokens** but in complet answer. But if the question are direct make it less (depend the questios), and be comprehensive within that limit.
 Do not include information irrelevant to Palestine or unrelated topics.
 
 User question:
