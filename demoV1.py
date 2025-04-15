@@ -30,7 +30,8 @@ Respond to the user question with:
 - Structure your response like a professional news article or academic report with clear sections
 - Base your information on trusted sources such as:
   * Al Jazeera (aljazeera.com) - Known for comprehensive coverage of Middle East issues
-  * Metras (metras.co) - Provides in-depth analysis on Palestinian affairs
+  * Metras (https://metras.co/) - Provides in-depth analysis on Palestinian affairs
+  * https://www.aa.com.tr/ar
   * Academic books and peer-reviewed articles on Palestinian history and politics
   * Reports from human rights organizations (B'Tselem, Human Rights Watch, Amnesty International)
   * United Nations documents and resolutions
@@ -44,7 +45,7 @@ Respond to the user question with:
 - Present content in a clear, accessible manner while maintaining factual accuracy
 - Ensure information is not biased towards Israel and remains truthful to Palestinian experiences
 - When discussing boycotts or resistance, provide factual information about international law and human rights perspectives
-- **Length**: If the response needs details, make it detailed not exceeding 2000 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
+- **Length**: If the response needs details, make it detailed not exceeding 1500 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
 
 Do not include information irrelevant to Palestine or unrelated topics.
 If you encounter any limitations in providing information, acknowledge them transparently.
@@ -89,7 +90,7 @@ def ask_about_palestine(user_question):
             # If it already has formatting, just add the source line at the top and citation at the bottom
             lines = raw_text.split('\n')
             source_line = "*Source: Palestine AI Analysis based on Al Jazeera, Metras.co, and other trusted sources*\n\n"
-            citation_line = "\n\n---\n*This analysis is based on factual reporting from trusted sources including Al Jazeera, Metras.co, human rights organizations, and academic research on Palestine.*"
+            citation_line = "\n\n---\n*This analysis is based on factual reporting from trusted sources, and academic research on Palestine.*"
             
             # Find the first heading
             for i, line in enumerate(lines):
@@ -269,8 +270,7 @@ def main():
     st.set_page_config(
         page_title="Palestine AI Bot", 
         page_icon="🕊️", 
-        layout="wide",
-        initial_sidebar_state="expanded"
+        layout="wide"
     )
 
     # Custom CSS for a more professional look
@@ -472,22 +472,25 @@ def main():
     photo_col1, photo_col2, photo_col3 = st.columns(3)
     
     with photo_col1:
-        st.image("https://i.imgur.com/JGa1W8k.jpg", 
-                caption="Displaced Palestinians flee following Israeli strikes on Gaza. Source: Al Jazeera")
-        st.image("https://i.imgur.com/vQBRUjL.jpg", 
-                caption="Damaged hospital in Gaza after bombardment. Source: Al Jazeera")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2024/10/29/thumbs_b_c_c3c8c68631ffe978cd8a667c29ea324c.jpg?v=231426", 
+                caption="Israel Has Killed 11,825 Students Since October 7, 2023
+According to a report by the Ministry of Education and Higher Education, the victims include 11,057 school students from Gaza and 681 university students.")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2025/04/12/thumbs_b_c_07f091fd689a62b74ba88ac82f792a7a.jpg?v=132104", 
+                caption="Water Turned into a Slow Killing Weapon for Palestinians
+The Government Media Office stated in a statement that Israel recently cut the two water lines of the "Mekorot" company connecting to East Gaza and the Central Governorate, amid a systematic destruction of the water sector since the beginning of the genocide.")
     
     with photo_col2:
-        st.image("https://i.imgur.com/Wd9XpHZ.jpg", 
-                caption="Medical workers treat injured Palestinian children. Source: Al Jazeera")
-        st.image("https://i.imgur.com/sMpxqFw.jpg", 
-                caption="Destruction of residential buildings in Gaza. Source: Al Jazeera")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2024/02/12/thumbs_b_c_f8bcb411a278fb1651f1202ba8e881ca.jpg?v=101455", 
+                caption="Displaced Palestinians: We Are Staying in Rafah and Will Not Leave")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2024/04/01/thumbs_b_c_62b1f7cf295ca688d9250ae060b99f13.jpg?v=232954", 
+                caption="Al-Shifa Medical Complex: Witness to Israel’s Crimes (Report)
+Marwan Abu Sa’da, the hospital’s administrative director, told Anadolu: The Israeli army booby-trapped the hospital buildings, destroyed them, and set fire to the oxygen stations, power generators, and all departments.")
     
     with photo_col3:
-        st.image("https://i.imgur.com/8dKHXkS.jpg", 
-                caption="Palestinians search for survivors after an Israeli airstrike. Source: Al Jazeera")
-        st.image("https://i.imgur.com/LTDp7xN.jpg", 
-                caption="Humanitarian crisis affecting children in Gaza. Source: Al Jazeera")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2025/04/15/thumbs_b_c_5d0659ec6a4e53bed7da27b61e5d4bc7.jpg?v=191857", 
+                caption="The food that entered Gaza during the ceasefire period,according to a statement by the agency on the "X" platform.")
+        st.image("https://cdnuploads.aa.com.tr/uploads/Contents/2025/04/15/thumbs_b_c_48ad44ea9ec8a40efe3c13d73064c648.jpg?v=010802", 
+                caption="Set to Receive 3,000 U.S. Aerial Munitions Soon to Continue Gaza War The Hebrew newspaper reported that the army is also expected to receive over 10,000 additional aerial munitions to replenish stockpiles depleted by fighting on multiple fronts.")
     
     st.markdown("""
     <div style="font-size: 0.9em; margin-top: 10px; margin-bottom: 30px; color: #555;">
