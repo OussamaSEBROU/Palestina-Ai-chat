@@ -25,7 +25,6 @@ You are an expert assistant dedicated to providing accurate, in-depth, and highl
 
 Your answers should focus entirely on Palestine-related topics. If the question is not related to Palestine, respond with: "Sorry! I'm trained just about Palestine Issue."
 
-
 Respond to the user question with:
 - Historical background with accurate timeline and context
 - Structure your response like a professional news article or academic report with clear sections
@@ -76,7 +75,7 @@ def ask_about_palestine(user_question):
             return f"❌ Error getting response: {error_message}. Please try again or contact support."
 
 # Function to simulate typing effect with improved performance
-def typing_effect(text, delay=0.001):
+def typing_effect(text, delay=0.003):
     # For very long responses, reduce the typing effect to improve performance
     if len(text) > 1000:
         delay = 0.001
@@ -197,7 +196,8 @@ def main():
     st.set_page_config(
         page_title="Palestina-ai", 
         page_icon="🕊️", 
-        layout="wide"
+        layout="wide",
+        initial_sidebar_state="expanded"
     )
 
     # Custom CSS for a more professional look
@@ -279,15 +279,14 @@ def main():
             
             team_members = [
                 "Nchachebi Abdelghani",
-                "Yasser Kasbi",
-                "Gueddi Amine",
+                "Yasser kasbi",
+                "Gueddi amine",
                 "Khtara Hafssa",
                 "Sirine Adoun",
                 "Ycine Boukermouch",
                 "Chihani Zineb",
-                "Chihani Bouchra", 
-                "Youcef Abbouna",
-                "Mehdia Abbouna",
+                "Chihani Bouchera",
+                "Mahdia Abouna",
                 "Rahma Elalouani",
                 "Redouan Rekik Sadek",
                 "Abdellatif Abdelnour",
