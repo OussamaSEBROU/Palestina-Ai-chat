@@ -18,12 +18,13 @@ model_text = genai.GenerativeModel(
     )
 )
 
-# Enhanced prompt template for Palestine-related questions with trusted sources
+# Enhanced prompt template for Palestine-related questions
 def build_palestine_prompt(user_question):
     return f"""
 You are an expert assistant dedicated to providing accurate, in-depth, and highly informative answers specifically about Palestine and related issues.
 
 Your answers should focus entirely on Palestine-related topics. If the question is not related to Palestine, respond with: "Sorry! I'm trained just about Palestine Issue."
+
 
 Respond to the user question with:
 - Historical background with accurate timeline and context
@@ -45,7 +46,7 @@ Respond to the user question with:
 - Present content in a clear, accessible manner while maintaining factual accuracy
 - Ensure information is not biased towards Israel and remains truthful to Palestinian experiences
 - When discussing boycotts or resistance, provide factual information about international law and human rights perspectives
-- **Length**: If the response needs details, make it detailed not exceeding 1500 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
+- Length: If the response needs details, make it detailed not exceeding 1500 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
 
 Do not include information irrelevant to Palestine or unrelated topics.
 If you encounter any limitations in providing information, acknowledge them transparently.
@@ -53,56 +54,15 @@ If you encounter any limitations in providing information, acknowledge them tran
 User question:
 {user_question}
 
-Your answer (detailed, accurate, context-aware, based on trusted sources):
+Your answer (detailed, accurate, context-aware):
 """
 
-# Ask Gemini Pro for an in-depth response with improved error handling and news article formatting
+# Ask Gemini Pro for an in-depth response with improved error handling
 def ask_about_palestine(user_question):
     prompt = build_palestine_prompt(user_question)
     try:
         response = model_text.generate_content(prompt)
-        raw_text = response.text
-        
-        # Format the response to look more like a news article if it doesn't already have proper formatting
-        if not any(header in raw_text for header in ["# ", "## ", "### "]):
-            # Try to identify a title from the first line or create one
-            lines = raw_text.split('\n')
-            if len(lines) > 0 and len(lines[0]) < 100:  # First line is likely a title
-                title = lines[0]
-                content = '\n'.join(lines[1:])
-            else:
-                # Create a title based on the question
-                title = f"Analysis: {user_question}"
-                content = raw_text
-            
-            # Format as news article with proper sections
-            formatted_text = f"""# {title.strip()}
-
-*Source: Palestine AI Analysis based on Al Jazeera, Metras.co, and other trusted sources*
-
-{content.strip()}
-
----
-*This analysis is based on factual reporting from trusted sources including Al Jazeera, Metras.co, human rights organizations, and academic research on Palestine.*
-"""
-            return formatted_text
-        else:
-            # If it already has formatting, just add the source line at the top and citation at the bottom
-            lines = raw_text.split('\n')
-            source_line = "*Source: Palestine AI Analysis based on Al Jazeera, Metras.co, and other trusted sources*\n\n"
-            citation_line = "\n\n---\n*This analysis is based on factual reporting from trusted sources, and academic research on Palestine.*"
-            
-            # Find the first heading
-            for i, line in enumerate(lines):
-                if line.startswith('#'):
-                    # Insert source line after the first heading
-                    lines.insert(i+1, source_line)
-                    break
-            
-            # Add citation at the end
-            lines.append(citation_line)
-            return '\n'.join(lines)
-            
+        return response.text
     except Exception as e:
         error_message = str(e)
         # Handle specific error types
@@ -116,7 +76,7 @@ def ask_about_palestine(user_question):
             return f"❌ Error getting response: {error_message}. Please try again or contact support."
 
 # Function to simulate typing effect with improved performance
-def typing_effect(text, delay=0.005):
+def typing_effect(text, delay=0.003):
     # For very long responses, reduce the typing effect to improve performance
     if len(text) > 1000:
         delay = 0.001
@@ -128,7 +88,7 @@ def typing_effect(text, delay=0.005):
         placeholder.markdown(f"<div style='line-height: 1.5;'>{output}</div>", unsafe_allow_html=True)
         time.sleep(delay)
 
-# Companies that support Israel (for boycott section) with verified alternatives
+# Companies that support Israel (for boycott section) with alternatives
 def get_boycott_companies():
     companies = {
         "Technology": {
@@ -137,17 +97,16 @@ def get_boycott_companies():
                 "Dell", "Nvidia", "PayPal", "Wix", "Fiverr", "Monday.com", "Check Point", "Mobileye", "Waze", "Zoom"
             ],
             "Alternatives": [
-                "Ecosia - Ethical search engine that plants trees (ecosia.org)", 
-                "DuckDuckGo - Privacy-focused search engine (duckduckgo.com)",
-                "Xiaomi/Oppo - Smartphone alternatives to Apple",
-                "Linux Mint/Ubuntu - Free open-source alternatives to Windows", 
-                "Element/Signal - Secure messaging alternatives to WhatsApp", 
-                "Temu/Shein - Online shopping alternatives to Amazon", 
-                "AMD Ryzen processors - Alternative to Intel", 
-                "Acer/Asus - Computer alternatives to HP/Dell", 
-                "LibreOffice/OpenOffice - Free alternatives to Microsoft Office",
-                "ProtonMail/Tutanota - Privacy-focused email alternatives to Gmail",
-                "Firefox/Tor Browser - Privacy-focused browsers"
+                "DuckDuckGo instead of Google Search", 
+                "Huawei/Samsung instead of Apple", 
+                "Linux/Ubuntu instead of Windows", 
+                "Telegram/Signal instead of WhatsApp", 
+                "AliExpress/eBay instead of Amazon", 
+                "AMD instead of Intel", 
+                "Lenovo/Acer instead of HP", 
+                "LibreOffice instead of Microsoft Office",
+                "ProtonMail instead of Gmail",
+                "Firefox/Brave instead of Chrome"
             ]
         },
         "Food & Beverage": {
@@ -157,16 +116,12 @@ def get_boycott_companies():
                 "Häagen-Dazs", "Sabra Hummus", "Strauss Group"
             ],
             "Alternatives": [
-                "Al Baik - Popular Middle Eastern fast food chain", 
-                "Almarai - Middle Eastern dairy and food producer",
-                "Vimto - Popular alternative beverage in Middle East",
-                "Mecca Cola - Alternative to Coca-Cola from France",
-                "Zamzam Cola - Iranian alternative to American soft drinks",
-                "Local coffee shops and cafes instead of Starbucks", 
-                "Local bakeries and restaurants instead of fast food chains",
-                "Alokozay Tea - Middle Eastern tea brand",
-                "Ulker - Turkish confectionery company",
-                "Pinar - Turkish dairy and food company"
+                "Local burger restaurants instead of McDonald's/Burger King", 
+                "Local coffee shops instead of Starbucks", 
+                "Local water or juice instead of Coca-Cola/Pepsi", 
+                "Local bakeries instead of chain restaurants",
+                "Local dairy products instead of Danone/Nestlé",
+                "Local chocolate and snacks instead of Mars/Mondelez"
             ]
         },
         "Fashion & Retail": {
@@ -176,17 +131,12 @@ def get_boycott_companies():
                 "Ralph Lauren", "Lacoste", "Hugo Boss", "Uniqlo"
             ],
             "Alternatives": [
-                "Li-Ning - Chinese sportswear company", 
-                "Anta Sports - Chinese sportswear company",
-                "Peak Sport - Chinese athletic footwear and apparel company",
-                "361 Degrees - Chinese sportswear company",
-                "Asics - Japanese sportswear company",
-                "LC Waikiki - Turkish clothing company",
-                "DeFacto - Turkish clothing retailer",
-                "Koton - Turkish fashion retailer",
-                "Splash - Middle Eastern fashion retailer",
-                "Shukr - Islamic clothing company",
-                "Modanisa - Islamic fashion retailer"
+                "Local clothing brands", 
+                "Ethical fashion brands", 
+                "Second-hand/thrift shopping", 
+                "Li-Ning/Anta Sports instead of Nike/Adidas",
+                "Decathlon for sports equipment",
+                "Local shoe manufacturers"
             ]
         },
         "Entertainment & Media": {
@@ -196,16 +146,12 @@ def get_boycott_companies():
                 "CNN", "BBC", "New York Times", "The Washington Post", "The Guardian"
             ],
             "Alternatives": [
-                "Al Jazeera - Qatar-based news network (aljazeera.com)", 
-                "TRT World - Turkish public broadcaster (trtworld.com)",
-                "Metras - Palestinian news and analysis (metras.co)",
-                "Middle East Eye - Independent news organization (middleeasteye.net)",
-                "Anghami - Middle Eastern music streaming service",
-                "Shahid - Arabic streaming service from MBC Group",
-                "Wavo - Middle Eastern streaming service",
-                "StarzPlay - MENA region streaming service",
-                "Press TV - Iranian news network",
-                "CGTN - Chinese international news channel"
+                "Independent streaming services", 
+                "Local film productions", 
+                "YouTube for independent content creators",
+                "Anghami instead of Spotify in Arab regions",
+                "Independent news sources and journalists",
+                "Al Jazeera, TRT World for news"
             ]
         },
         "Sports": {
@@ -214,16 +160,9 @@ def get_boycott_companies():
                 "Wilson", "Spalding", "Gatorade", "Fitbit", "Garmin"
             ],
             "Alternatives": [
-                "Li-Ning - Chinese sportswear company", 
-                "Anta Sports - Chinese sportswear company",
-                "Peak Sport - Chinese athletic footwear and apparel company",
-                "361 Degrees - Chinese sportswear company",
-                "Asics - Japanese sportswear company",
-                "Fila - Italian/South Korean sportswear company",
-                "Mizuno - Japanese sports equipment company",
-                "Decathlon - French sporting goods retailer",
-                "Xiaomi Mi Band - Alternative to Fitbit",
-                "Huawei Watch - Alternative to Garmin"
+                "Li-Ning", "Anta Sports", "Asics", "Fila", "Mizuno",
+                "Local sports equipment manufacturers",
+                "Independent fitness apps instead of corporate ones"
             ]
         },
         "Cosmetics & Personal Care": {
@@ -232,16 +171,10 @@ def get_boycott_companies():
                 "Garnier", "Dove", "Nivea", "Johnson & Johnson", "Colgate-Palmolive", "Procter & Gamble"
             ],
             "Alternatives": [
-                "Mikyajy - Middle Eastern cosmetics brand", 
-                "Flormar - Turkish cosmetics brand",
-                "Golden Rose - Turkish cosmetics brand",
-                "Farmasi - Turkish beauty and personal care company",
-                "Hemani - Pakistani natural products company",
-                "Wardah - Indonesian halal cosmetics",
-                "One Two Cosmetics - Malaysian cosmetics brand",
-                "Lush - Ethical cosmetics company with strong stance against occupation",
-                "The Body Shop - Ethical cosmetics company",
-                "Dr. Organic - Natural skincare products"
+                "Local natural cosmetics brands", 
+                "Halal cosmetics brands", 
+                "Ethical and cruelty-free alternatives",
+                "Handmade soaps and natural products"
             ]
         },
         "Travel & Hospitality": {
@@ -250,16 +183,10 @@ def get_boycott_companies():
                 "InterContinental", "Hyatt", "Delta Airlines", "American Airlines", "United Airlines"
             ],
             "Alternatives": [
-                "Almosafer - Middle Eastern travel booking platform", 
-                "Rehlat - Middle Eastern travel booking platform",
-                "Tajawal - Middle Eastern travel booking platform",
-                "HotelsCombined - Travel metasearch engine",
-                "Qatar Airways - Middle Eastern airline",
-                "Emirates - Middle Eastern airline",
-                "Etihad Airways - Middle Eastern airline",
-                "Turkish Airlines - Turkish airline",
-                "Royal Jordanian - Jordanian airline",
-                "Oman Air - Omani airline"
+                "Direct hotel bookings", 
+                "Local travel agencies", 
+                "Alternative accommodation platforms",
+                "Local airlines when possible"
             ]
         }
     }
@@ -268,7 +195,7 @@ def get_boycott_companies():
 # App UI with enhanced professional features
 def main():
     st.set_page_config(
-        page_title="Palestine AI Bot", 
+        page_title="Palestina-ai", 
         page_icon="🕊️", 
         layout="wide"
     )
@@ -352,11 +279,14 @@ def main():
             
             team_members = [
                 "Nchachebi Abdelghani",
+                "Yasser Kasbi",
+                "Gueddi Amine",
                 "Khtara Hafssa",
                 "Sirine Adoun",
                 "Ycine Boukermouch",
                 "Chihani Zineb",
-                "Chihani Bouchra",
+                "Chihani Bouchra", 
+                "Youcef abboun",
                 "Mahdia Abouna",
                 "Rahma Elalouani",
                 "Redouan Rekik Sadek",
@@ -365,10 +295,7 @@ def main():
                 "Bahedi Bouchra",
                 "Chacha Abdelazize",
                 "Meriama Hadjyahya",
-                "Adouad Sanae",
-                "Yasser Kasbi",
-                "Gueddi Amine",
-                "Youcef Abbouna"
+                "Adaouad Sanae"
             ]
             
             for member in team_members:
@@ -457,17 +384,21 @@ def main():
     </div>
     """, unsafe_allow_html=True)
 
+    # Information cards in a grid layout
+    col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
         ### Historical Context
-        Palestine has a rich history dating back thousands of years. The region has been home to diverse populations and has been under various rulers throughout history, including the Ottoman Empire and British Mandate before the establishment of Israel in 1948.
+        Palestine is a land with a deep-rooted history spanning thousands of years, and historical documents affirm that the Palestinian people are the rightful owners of this land. Palestine has been home to its indigenous population, who have preserved their presence and culture despite attempts at erasure and displacement throughout the ages.
+
         """)
     
     with col2:
         st.markdown("""
         ### Current Situation
-        The ongoing conflict has resulted in significant humanitarian challenges for Palestinians, particularly in Gaza where blockades have restricted access to essential resources and services since 2007.
+        The Palestinian people continue to face severe humanitarian challenges due to ongoing occupation and blockade, particularly in the Gaza Strip, where residents are deprived of access to essential resources and services. These actions constitute clear violations of human rights and international law, which guarantee the right of peoples to live freely and with dignity in their homeland.
+
         """)
 
     # User input section with enhanced styling
