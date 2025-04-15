@@ -76,7 +76,7 @@ def ask_about_palestine(user_question):
             return f"❌ Error getting response: {error_message}. Please try again or contact support."
 
 # Function to simulate typing effect with improved performance
-def typing_effect(text, delay=0.003):
+def typing_effect(text, delay=0.001):
     # For very long responses, reduce the typing effect to improve performance
     if len(text) > 1000:
         delay = 0.001
@@ -286,13 +286,12 @@ def main():
                 "Ycine Boukermouch",
                 "Chihani Zineb",
                 "Chihani Bouchra", 
-                "Youcef abboun",
-                "Mahdia Abouna",
+                "Youcef Abbouna",
+                "Mehdia Abbouna",
                 "Rahma Elalouani",
                 "Redouan Rekik Sadek",
                 "Abdellatif Abdelnour",
-                "Abderhman Daoud",
-                "Bahedi Bouchra",
+                "Bahedi Bouchera",
                 "Chacha Abdelazize",
                 "Meriama Hadjyahya",
                 "Adaouad Sanae"
