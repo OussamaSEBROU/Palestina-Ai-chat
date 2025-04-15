@@ -352,5 +352,192 @@ def main():
             
             team_members = [
                 "Nchachebi Abdelghani",
-                "Khtara Hafss
-(Content truncated due to size limit. Use line ranges to read in chunks)
+                "Khtara Hafssa",
+                "Sirine Adoun",
+                "Ycine Boukermouch",
+                "Chihani Zineb",
+                "Chihani Bouchra",
+                "Mahdia Abouna",
+                "Rahma Elalouani",
+                "Redouan Rekik Sadek",
+                "Abdellatif Abdelnour",
+                "Abderhman Daoud",
+                "Bahedi Bouchra",
+                "Chacha Abdelazize",
+                "Meriama Hadjyahya",
+                "Adouad Sanae",
+                "Yasser Kasbi",
+                "Gueddi Amine",
+                "Youcef Abbouna"
+            ]
+            
+            for member in team_members:
+                st.markdown(f"<div class='team-member'>• {member}</div>", unsafe_allow_html=True)
+        
+        # Boycott Section
+        with st.expander("Stand With Gaza - Boycott", expanded=False):
+            st.markdown("### Companies Supporting Israel")
+            st.markdown("""
+            The boycott movement aims to apply economic and political pressure on Israel to comply with international law and Palestinian rights. 
+            Below is a list of companies that have been identified as supporting Israel, along with alternatives you can use instead:
+            """)
+            
+            companies = get_boycott_companies()
+            for category, data in companies.items():
+                st.markdown(f"<div class='boycott-category'>{category}</div>", unsafe_allow_html=True)
+                
+                # Display companies to boycott
+                st.markdown("<div style='margin-left: 15px;'><strong>Companies to Boycott:</strong></div>", unsafe_allow_html=True)
+                for company in data["Companies"]:
+                    st.markdown(f"<div class='boycott-company'>• {company}</div>", unsafe_allow_html=True)
+                
+                # Display alternatives
+                st.markdown("<div style='margin-left: 15px; margin-top: 10px; color: #2ca02c;'><strong>Alternatives:</strong></div>", unsafe_allow_html=True)
+                for alternative in data["Alternatives"]:
+                    st.markdown(f"<div class='boycott-alternative'>✓ {alternative}</div>", unsafe_allow_html=True)
+                
+                st.markdown("<hr style='margin: 15px 0; border-color: #f0f0f0;'>", unsafe_allow_html=True)
+            
+            st.markdown("""
+            ### How to Support Gaza
+            
+            1. **Boycott Products**: Avoid purchasing products from companies supporting Israel
+            2. **Choose Alternatives**: Use the suggested alternatives or find local options
+            3. **Raise Awareness**: Share information about the situation in Gaza
+            4. **Donate**: Support humanitarian organizations working in Gaza
+            5. **Advocate**: Contact your representatives to demand action
+            6. **Join Protests**: Participate in peaceful demonstrations
+            
+            Remember that economic pressure through boycotts has historically been an effective non-violent resistance strategy.
+            """)
+        
+        # Help Section
+        with st.expander("Help", expanded=True):
+            st.markdown("### How to Use the App")
+            st.markdown("""
+            - **Ask Questions**: You can ask anything related to **Palestine's history, current events, or humanitarian issues**.
+            - **Multi-Languages Supported**: You can ask in any language.
+            - **Dark Mode**: To switch to dark mode, go to **Settings** > **Choose app theme** > **Dark Mode**.
+            - **App Features**:
+              - **In-depth answers** focused only on Palestine.
+              - **Context-aware** responses tailored to your question.
+              - **Accurate, detailed information** backed by AI.
+            """)
+        st.markdown("---")
+        
+        # About Us Section
+        with st.expander("About Us", expanded=False):
+            st.markdown("#### Palestine AI Chat")
+            st.markdown("This app was developed to provide in-depth, AI-powered insights into the Palestinian cause.")
+            st.markdown("""
+            **Version:** 1.1.0
+            
+            #### Features
+            - AI-Powered Insights about Palestine
+            - Focus on History, Humanitarian Issues, and Current Events
+            - Multi-Language Support
+            - Accurate and Context-Aware Responses
+            - Boycott Information and Support Resources
+            
+            © 2025 Palestine AI Team. All rights reserved.
+            
+            [Contact Us](mailto:your-email@example.com?subject=Palestine%20Info%20Bot%20Inquiry&body=Dear%20Palestine%20Info%20Bot%20Team,%0A%0AWe%20are%20writing%20to%20inquire%20about%20[your%20inquiry]%2C%20specifically%20[details%20of%20your%20inquiry].%0A%0A[Provide%20additional%20context%20and%20details%20here].%0A%0APlease%20let%20us%20know%20if%20you%20require%20any%20further%20information%20from%20our%20end.%0A%0ASincerely,%0A[Your%20Company%20Name]%0A[Your%20Name]%0A[Your%20Title]%0A[Your%20Phone%20Number]%0A[Your%20Email%20Address])
+            """)
+
+    # Main content area
+    st.title("Palestine AI - From the river to the sea")
+
+    # Quote of the Day section in a professional style
+    st.markdown("""
+    <div class="quote-box">
+        "The issue of Palestine is a trial that God has tested your conscience, resolve, wealth, and unity with."
+    </div>
+    <div class="quote-author">
+        — Al-Bashir Al-Ibrahimi
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Gaza Photos Section - Documentation of Israeli Actions
+    st.markdown("## Documenting Israeli Actions in Gaza")
+    st.markdown("""
+    <div style="background-color: rgba(220, 53, 69, 0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="font-size: 0.9em; color: #721c24;">
+            <strong>Warning:</strong> The following section contains images that document the humanitarian crisis in Gaza. 
+            These images may be disturbing but serve as important documentation of the situation.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Photo gallery with 3 columns
+    photo_col1, photo_col2, photo_col3 = st.columns(3)
+    
+    with photo_col1:
+        st.image("https://i.imgur.com/JGa1W8k.jpg", 
+                caption="Displaced Palestinians flee following Israeli strikes on Gaza. Source: Al Jazeera")
+        st.image("https://i.imgur.com/vQBRUjL.jpg", 
+                caption="Damaged hospital in Gaza after bombardment. Source: Al Jazeera")
+    
+    with photo_col2:
+        st.image("https://i.imgur.com/Wd9XpHZ.jpg", 
+                caption="Medical workers treat injured Palestinian children. Source: Al Jazeera")
+        st.image("https://i.imgur.com/sMpxqFw.jpg", 
+                caption="Destruction of residential buildings in Gaza. Source: Al Jazeera")
+    
+    with photo_col3:
+        st.image("https://i.imgur.com/8dKHXkS.jpg", 
+                caption="Palestinians search for survivors after an Israeli airstrike. Source: Al Jazeera")
+        st.image("https://i.imgur.com/LTDp7xN.jpg", 
+                caption="Humanitarian crisis affecting children in Gaza. Source: Al Jazeera")
+    
+    st.markdown("""
+    <div style="font-size: 0.9em; margin-top: 10px; margin-bottom: 30px; color: #555;">
+        These images document the humanitarian crisis in Gaza since October 7, 2023. For more documentation and reporting, visit 
+        <a href="https://www.aljazeera.com/where/palestine/" target="_blank">Al Jazeera Palestine coverage</a> or 
+        <a href="https://metras.co/" target="_blank">Metras.co</a>.
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Information cards in a grid layout
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### Historical Context
+        Palestine has a rich history dating back thousands of years. The region has been home to diverse populations and has been under various rulers throughout history, including the Ottoman Empire and British Mandate before the establishment of Israel in 1948.
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### Current Situation
+        The ongoing conflict has resulted in significant humanitarian challenges for Palestinians, particularly in Gaza where blockades have restricted access to essential resources and services since 2007.
+        """)
+
+    # User input section with enhanced styling
+    st.markdown("<hr style='margin: 30px 0;'>", unsafe_allow_html=True)
+    st.markdown("### Ask Your Question")
+    st.markdown("Get accurate, detailed information about Palestine's history, current events, and humanitarian issues.")
+    
+    user_question = st.text_input("", placeholder="Type your question about Palestine here...")
+    
+    # Add a submit button for better UX
+    submit_button = st.button("Get Answer")
+
+    # Process the question when submitted
+    if user_question and submit_button:
+        with st.spinner("Generating comprehensive answer..."):
+            answer = ask_about_palestine(user_question)
+            
+            # Create a container with better styling for the answer
+            answer_container = st.container()
+            with answer_container:
+                st.markdown("<div style='background-color: #f0f7fb; padding: 20px; border-radius: 10px; border-left: 5px solid #1f77b4;'>", unsafe_allow_html=True)
+                # Typing effect for response
+                with st.empty():  # Create an empty placeholder to display the typing effect
+                    typing_effect(answer)
+                st.markdown("</div>", unsafe_allow_html=True)
+    
+    # Footer
+    st.markdown("<div class='footer'>Palestine AI - Developed by Elkalem-Imrou Height School in collaboration with Erinov Company</div>", unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    main()
