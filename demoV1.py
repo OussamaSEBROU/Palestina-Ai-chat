@@ -37,7 +37,7 @@ Respond to the user question with:
 - The content should be easy to read, with relevant information presented clearly and concisely
 - The results must not be biased towards Israel and should be reliable and truthful
 - When discussing boycotts or resistance, provide factual information about international law and human rights perspectives
-- **Length**: If the response needs details, make it detailed not exceeding 1500 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
+- **Length**: If the response needs details, make it detailed not exceeding 2000 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
 
 Do not include information irrelevant to Palestine or unrelated topics.
 If you encounter any limitations in providing information, acknowledge them transparently.
@@ -67,7 +67,7 @@ def ask_about_palestine(user_question):
             return f"❌ Error getting response: {error_message}. Please try again or contact support."
 
 # Function to simulate typing effect with improved performance
-def typing_effect(text, delay=0.003):
+def typing_effect(text, delay=0.005):
     # For very long responses, reduce the typing effect to improve performance
     if len(text) > 1000:
         delay = 0.001
@@ -186,7 +186,7 @@ def get_boycott_companies():
 # App UI with enhanced professional features
 def main():
     st.set_page_config(
-        page_title="Palestina-ai", 
+        page_title="Palestine AI Bot", 
         page_icon="🕊️", 
         layout="wide",
         initial_sidebar_state="expanded"
@@ -379,15 +379,13 @@ def main():
     with col1:
         st.markdown("""
         ### Historical Context
-        Palestine is a land with a deep-rooted history spanning thousands of years, and historical documents affirm that the Palestinian people are the rightful owners of this land. Palestine has been home to its indigenous population, who have preserved their presence and culture despite attempts at erasure and displacement throughout the ages.
-
+        Palestine has a rich history dating back thousands of years. The region has been home to diverse populations and has been under various rulers throughout history, including the Ottoman Empire and British Mandate before the establishment of Israel in 1948.
         """)
     
     with col2:
         st.markdown("""
         ### Current Situation
-        The Palestinian people continue to face severe humanitarian challenges due to ongoing occupation and blockade, particularly in the Gaza Strip, where residents are deprived of access to essential resources and services. These actions constitute clear violations of human rights and international law, which guarantee the right of peoples to live freely and with dignity in their homeland.
-
+        The ongoing conflict has resulted in significant humanitarian challenges for Palestinians, particularly in Gaza where blockades have restricted access to essential resources and services since 2007.
         """)
 
     # User input section with enhanced styling
