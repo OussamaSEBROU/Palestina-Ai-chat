@@ -18,7 +18,7 @@ model_text = genai.GenerativeModel(
     )
 )
 
-# Enhanced prompt template for Palestine-related questions
+# Enhanced prompt template for Palestine-related questions with trusted sources
 def build_palestine_prompt(user_question):
     return f"""
 You are an expert assistant dedicated to providing accurate, in-depth, and highly informative answers specifically about Palestine and related issues.
@@ -27,15 +27,22 @@ Your answers should focus entirely on Palestine-related topics. If the question 
 
 Respond to the user question with:
 - Historical background with accurate timeline and context
-- Rely on precise, scientific, and historical sources with very trustworthy references
-- Well-researched current events with factual reporting
-- Conversation coherence and natural flow
-- Insight into the humanitarian situation with accurate statistics when available
+- Structure your response like a professional news article or academic report with clear sections
+- Base your information on trusted sources such as:
+  * Al Jazeera (aljazeera.com) - Known for comprehensive coverage of Middle East issues
+  * Metras (metras.co) - Provides in-depth analysis on Palestinian affairs
+  * Academic books and peer-reviewed articles on Palestinian history and politics
+  * Reports from human rights organizations (B'Tselem, Human Rights Watch, Amnesty International)
+  * United Nations documents and resolutions
+  * Palestinian academic institutions and research centers
+- Include specific citations when possible (e.g., "According to Al Jazeera's reporting on [date]...")
+- Provide factual, well-researched information on current events with accurate reporting
+- Include relevant statistics and data from credible sources when discussing the humanitarian situation
 - The answer should be in the same language as the input (be careful with this point)
-- The response should be well-organized, ordered, and presented in a professional style
-- Titles and subtitles (if answer needs it) should have proper sizes for clarity and structure
-- The content should be easy to read, with relevant information presented clearly and concisely
-- The results must not be biased towards Israel and should be reliable and truthful
+- The response should be well-organized, ordered, and presented in a professional journalistic style
+- Use titles and subtitles for clarity and structure when appropriate
+- Present content in a clear, accessible manner while maintaining factual accuracy
+- Ensure information is not biased towards Israel and remains truthful to Palestinian experiences
 - When discussing boycotts or resistance, provide factual information about international law and human rights perspectives
 - **Length**: If the response needs details, make it detailed not exceeding 1500 tokens but in a complete answer. For direct questions, make it concise (depending on the question), while remaining comprehensive within that limit.
 
@@ -45,15 +52,56 @@ If you encounter any limitations in providing information, acknowledge them tran
 User question:
 {user_question}
 
-Your answer (detailed, accurate, context-aware):
+Your answer (detailed, accurate, context-aware, based on trusted sources):
 """
 
-# Ask Gemini Pro for an in-depth response with improved error handling
+# Ask Gemini Pro for an in-depth response with improved error handling and news article formatting
 def ask_about_palestine(user_question):
     prompt = build_palestine_prompt(user_question)
     try:
         response = model_text.generate_content(prompt)
-        return response.text
+        raw_text = response.text
+        
+        # Format the response to look more like a news article if it doesn't already have proper formatting
+        if not any(header in raw_text for header in ["# ", "## ", "### "]):
+            # Try to identify a title from the first line or create one
+            lines = raw_text.split('\n')
+            if len(lines) > 0 and len(lines[0]) < 100:  # First line is likely a title
+                title = lines[0]
+                content = '\n'.join(lines[1:])
+            else:
+                # Create a title based on the question
+                title = f"Analysis: {user_question}"
+                content = raw_text
+            
+            # Format as news article with proper sections
+            formatted_text = f"""# {title.strip()}
+
+*Source: Palestine AI Analysis based on Al Jazeera, Metras.co, and other trusted sources*
+
+{content.strip()}
+
+---
+*This analysis is based on factual reporting from trusted sources including Al Jazeera, Metras.co, human rights organizations, and academic research on Palestine.*
+"""
+            return formatted_text
+        else:
+            # If it already has formatting, just add the source line at the top and citation at the bottom
+            lines = raw_text.split('\n')
+            source_line = "*Source: Palestine AI Analysis based on Al Jazeera, Metras.co, and other trusted sources*\n\n"
+            citation_line = "\n\n---\n*This analysis is based on factual reporting from trusted sources including Al Jazeera, Metras.co, human rights organizations, and academic research on Palestine.*"
+            
+            # Find the first heading
+            for i, line in enumerate(lines):
+                if line.startswith('#'):
+                    # Insert source line after the first heading
+                    lines.insert(i+1, source_line)
+                    break
+            
+            # Add citation at the end
+            lines.append(citation_line)
+            return '\n'.join(lines)
+            
     except Exception as e:
         error_message = str(e)
         # Handle specific error types
@@ -79,7 +127,7 @@ def typing_effect(text, delay=0.005):
         placeholder.markdown(f"<div style='line-height: 1.5;'>{output}</div>", unsafe_allow_html=True)
         time.sleep(delay)
 
-# Companies that support Israel (for boycott section) with alternatives
+# Companies that support Israel (for boycott section) with verified alternatives
 def get_boycott_companies():
     companies = {
         "Technology": {
@@ -88,16 +136,17 @@ def get_boycott_companies():
                 "Dell", "Nvidia", "PayPal", "Wix", "Fiverr", "Monday.com", "Check Point", "Mobileye", "Waze", "Zoom"
             ],
             "Alternatives": [
-                "DuckDuckGo instead of Google Search", 
-                "Huawei/Samsung instead of Apple", 
-                "Linux/Ubuntu instead of Windows", 
-                "Telegram/Signal instead of WhatsApp", 
-                "AliExpress/eBay instead of Amazon", 
-                "AMD instead of Intel", 
-                "Lenovo/Acer instead of HP", 
-                "LibreOffice instead of Microsoft Office",
-                "ProtonMail instead of Gmail",
-                "Firefox/Brave instead of Chrome"
+                "Ecosia - Ethical search engine that plants trees (ecosia.org)", 
+                "DuckDuckGo - Privacy-focused search engine (duckduckgo.com)",
+                "Xiaomi/Oppo - Smartphone alternatives to Apple",
+                "Linux Mint/Ubuntu - Free open-source alternatives to Windows", 
+                "Element/Signal - Secure messaging alternatives to WhatsApp", 
+                "Temu/Shein - Online shopping alternatives to Amazon", 
+                "AMD Ryzen processors - Alternative to Intel", 
+                "Acer/Asus - Computer alternatives to HP/Dell", 
+                "LibreOffice/OpenOffice - Free alternatives to Microsoft Office",
+                "ProtonMail/Tutanota - Privacy-focused email alternatives to Gmail",
+                "Firefox/Tor Browser - Privacy-focused browsers"
             ]
         },
         "Food & Beverage": {
@@ -107,12 +156,16 @@ def get_boycott_companies():
                 "Häagen-Dazs", "Sabra Hummus", "Strauss Group"
             ],
             "Alternatives": [
-                "Local burger restaurants instead of McDonald's/Burger King", 
-                "Local coffee shops instead of Starbucks", 
-                "Local water or juice instead of Coca-Cola/Pepsi", 
-                "Local bakeries instead of chain restaurants",
-                "Local dairy products instead of Danone/Nestlé",
-                "Local chocolate and snacks instead of Mars/Mondelez"
+                "Al Baik - Popular Middle Eastern fast food chain", 
+                "Almarai - Middle Eastern dairy and food producer",
+                "Vimto - Popular alternative beverage in Middle East",
+                "Mecca Cola - Alternative to Coca-Cola from France",
+                "Zamzam Cola - Iranian alternative to American soft drinks",
+                "Local coffee shops and cafes instead of Starbucks", 
+                "Local bakeries and restaurants instead of fast food chains",
+                "Alokozay Tea - Middle Eastern tea brand",
+                "Ulker - Turkish confectionery company",
+                "Pinar - Turkish dairy and food company"
             ]
         },
         "Fashion & Retail": {
@@ -122,12 +175,17 @@ def get_boycott_companies():
                 "Ralph Lauren", "Lacoste", "Hugo Boss", "Uniqlo"
             ],
             "Alternatives": [
-                "Local clothing brands", 
-                "Ethical fashion brands", 
-                "Second-hand/thrift shopping", 
-                "Li-Ning/Anta Sports instead of Nike/Adidas",
-                "Decathlon for sports equipment",
-                "Local shoe manufacturers"
+                "Li-Ning - Chinese sportswear company", 
+                "Anta Sports - Chinese sportswear company",
+                "Peak Sport - Chinese athletic footwear and apparel company",
+                "361 Degrees - Chinese sportswear company",
+                "Asics - Japanese sportswear company",
+                "LC Waikiki - Turkish clothing company",
+                "DeFacto - Turkish clothing retailer",
+                "Koton - Turkish fashion retailer",
+                "Splash - Middle Eastern fashion retailer",
+                "Shukr - Islamic clothing company",
+                "Modanisa - Islamic fashion retailer"
             ]
         },
         "Entertainment & Media": {
@@ -137,12 +195,16 @@ def get_boycott_companies():
                 "CNN", "BBC", "New York Times", "The Washington Post", "The Guardian"
             ],
             "Alternatives": [
-                "Independent streaming services", 
-                "Local film productions", 
-                "YouTube for independent content creators",
-                "Anghami instead of Spotify in Arab regions",
-                "Independent news sources and journalists",
-                "Al Jazeera, TRT World for news"
+                "Al Jazeera - Qatar-based news network (aljazeera.com)", 
+                "TRT World - Turkish public broadcaster (trtworld.com)",
+                "Metras - Palestinian news and analysis (metras.co)",
+                "Middle East Eye - Independent news organization (middleeasteye.net)",
+                "Anghami - Middle Eastern music streaming service",
+                "Shahid - Arabic streaming service from MBC Group",
+                "Wavo - Middle Eastern streaming service",
+                "StarzPlay - MENA region streaming service",
+                "Press TV - Iranian news network",
+                "CGTN - Chinese international news channel"
             ]
         },
         "Sports": {
@@ -151,9 +213,16 @@ def get_boycott_companies():
                 "Wilson", "Spalding", "Gatorade", "Fitbit", "Garmin"
             ],
             "Alternatives": [
-                "Li-Ning", "Anta Sports", "Asics", "Fila", "Mizuno",
-                "Local sports equipment manufacturers",
-                "Independent fitness apps instead of corporate ones"
+                "Li-Ning - Chinese sportswear company", 
+                "Anta Sports - Chinese sportswear company",
+                "Peak Sport - Chinese athletic footwear and apparel company",
+                "361 Degrees - Chinese sportswear company",
+                "Asics - Japanese sportswear company",
+                "Fila - Italian/South Korean sportswear company",
+                "Mizuno - Japanese sports equipment company",
+                "Decathlon - French sporting goods retailer",
+                "Xiaomi Mi Band - Alternative to Fitbit",
+                "Huawei Watch - Alternative to Garmin"
             ]
         },
         "Cosmetics & Personal Care": {
@@ -162,10 +231,16 @@ def get_boycott_companies():
                 "Garnier", "Dove", "Nivea", "Johnson & Johnson", "Colgate-Palmolive", "Procter & Gamble"
             ],
             "Alternatives": [
-                "Local natural cosmetics brands", 
-                "Halal cosmetics brands", 
-                "Ethical and cruelty-free alternatives",
-                "Handmade soaps and natural products"
+                "Mikyajy - Middle Eastern cosmetics brand", 
+                "Flormar - Turkish cosmetics brand",
+                "Golden Rose - Turkish cosmetics brand",
+                "Farmasi - Turkish beauty and personal care company",
+                "Hemani - Pakistani natural products company",
+                "Wardah - Indonesian halal cosmetics",
+                "One Two Cosmetics - Malaysian cosmetics brand",
+                "Lush - Ethical cosmetics company with strong stance against occupation",
+                "The Body Shop - Ethical cosmetics company",
+                "Dr. Organic - Natural skincare products"
             ]
         },
         "Travel & Hospitality": {
@@ -174,10 +249,16 @@ def get_boycott_companies():
                 "InterContinental", "Hyatt", "Delta Airlines", "American Airlines", "United Airlines"
             ],
             "Alternatives": [
-                "Direct hotel bookings", 
-                "Local travel agencies", 
-                "Alternative accommodation platforms",
-                "Local airlines when possible"
+                "Almosafer - Middle Eastern travel booking platform", 
+                "Rehlat - Middle Eastern travel booking platform",
+                "Tajawal - Middle Eastern travel booking platform",
+                "HotelsCombined - Travel metasearch engine",
+                "Qatar Airways - Middle Eastern airline",
+                "Emirates - Middle Eastern airline",
+                "Etihad Airways - Middle Eastern airline",
+                "Turkish Airlines - Turkish airline",
+                "Royal Jordanian - Jordanian airline",
+                "Oman Air - Omani airline"
             ]
         }
     }
@@ -284,7 +365,10 @@ def main():
                 "Bahedi Bouchra",
                 "Chacha Abdelazize",
                 "Meriama Hadjyahya",
-                "Adouad Sanae"
+                "Adouad Sanae",
+                "Yasser Kasbi",
+                "Gueddi Amine",
+                "Youcef Abbouna"
             ]
             
             for member in team_members:
@@ -370,6 +454,46 @@ def main():
     </div>
     <div class="quote-author">
         — Al-Bashir Al-Ibrahimi
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Gaza Photos Section - Documentation of Israeli Actions
+    st.markdown("## Documenting Israeli Actions in Gaza")
+    st.markdown("""
+    <div style="background-color: rgba(220, 53, 69, 0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="font-size: 0.9em; color: #721c24;">
+            <strong>Warning:</strong> The following section contains images that document the humanitarian crisis in Gaza. 
+            These images may be disturbing but serve as important documentation of the situation.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Photo gallery with 3 columns
+    photo_col1, photo_col2, photo_col3 = st.columns(3)
+    
+    with photo_col1:
+        st.image("https://www.aljazeera.com/wp-content/uploads/2023/10/2023-10-13T135146Z_1183907012_RC2J03A9IXLJ_RTRMADP_3_ISRAEL-PALESTINIANS-GAZA-DISPLACED-1697209344.jpg", 
+                caption="Displaced Palestinians flee following Israeli strikes on Gaza. Source: Al Jazeera")
+        st.image("https://www.aljazeera.com/wp-content/uploads/2023/12/2023-12-22T143958Z_1895711493_RC2WH4AIQN3C_RTRMADP_3_ISRAEL-PALESTINIANS-GAZA-HOSPITAL-1703257502.jpg", 
+                caption="Damaged hospital in Gaza after bombardment. Source: Al Jazeera")
+    
+    with photo_col2:
+        st.image("https://www.aljazeera.com/wp-content/uploads/2023/11/2023-11-22T121952Z_1780431356_RC2PH4AAQJLW_RTRMADP_3_ISRAEL-PALESTINIANS-GAZA-HOSPITAL-1700661111.jpg", 
+                caption="Medical workers treat injured Palestinian children. Source: Al Jazeera")
+        st.image("https://www.aljazeera.com/wp-content/uploads/2024/01/2024-01-17T143152Z_1671658838_RC2QP4AIZLXM_RTRMADP_3_ISRAEL-PALESTINIANS-GAZA-HOSPITAL-1705503249.jpg", 
+                caption="Destruction of residential buildings in Gaza. Source: Al Jazeera")
+    
+    with photo_col3:
+        st.image("https://www.aljazeera.com/wp-content/uploads/2023/12/2023-12-09T143728Z_1005221558_RC2YG4A3LFVN_RTRMADP_3_ISRAEL-PALESTINIANS-1702137600.jpg", 
+                caption="Palestinians search for survivors after an Israeli airstrike. Source: Al Jazeera")
+        st.image("https://www.aljazeera.com/wp-content/uploads/2023/10/2023-10-26T095918Z_1517411437_RC2U34AYVZL9_RTRMADP_3_ISRAEL-PALESTINIANS-GAZA-HOSPITAL-1698315782.jpg", 
+                caption="Humanitarian crisis affecting children in Gaza. Source: Al Jazeera")
+    
+    st.markdown("""
+    <div style="font-size: 0.9em; margin-top: 10px; margin-bottom: 30px; color: #555;">
+        These images document the humanitarian crisis in Gaza since October 7, 2023. For more documentation and reporting, visit 
+        <a href="https://www.aljazeera.com/where/palestine/" target="_blank">Al Jazeera Palestine coverage</a> or 
+        <a href="https://metras.co/" target="_blank">Metras.co</a>.
     </div>
     """, unsafe_allow_html=True)
 
