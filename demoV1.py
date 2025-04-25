@@ -554,6 +554,7 @@ def get_educational_resources_AR():
                 "title": "The Nakba: Palestinian Exodus of 1948",
                 "description1": "النكبة (كارثة بالعربية) تشير إلى التهجير الجماعي وتجريد الفلسطينيين من ممتلكاتهم أثناء إنشاء دولة إسرائيل في عام 1948. أُجبر أكثر من 750,000 فلسطيني على مغادرة منازلهم، وتم تدمير أكثر من 500 قرية فلسطينية.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Institute for Palestine Studies", "url": "https://www.palestine-studies.org/"},
                     {"name": "UN Archives", "url": "https://archives.un.org/"},
                     {"name": "Palestinian Journeys", "url": "https://www.paljourneys.org/en/timeline/highlight/165/nakba"},
@@ -571,6 +572,7 @@ def get_educational_resources_AR():
                 "title": "The 1967 Occupation and Its Consequences",
                 "description1": "في يونيو 1967، احتلت إسرائيل الضفة الغربية، والقدس الشرقية، وقطاع غزة، ومرتفعات الجولان، وشبه جزيرة سيناء خلال حرب الأيام الستة. هذا الاحتلال، الذي لا يزال مستمرًا حتى اليوم (باستثناء سيناء)، أدى إلى توسع المستوطنات الإسرائيلية غير القانونية ونظام من السيطرة العسكرية على السكان الفلسطينيين.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "United Nations", "url": "https://www.un.org/unispal/"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/"},
                     {"name": "Human Rights Watch", "url": "https://www.hrw.org/middle-east/north-africa/israel/palestine"},
@@ -590,6 +592,7 @@ def get_educational_resources_AR():
                 "title": "Israeli Military Detention of Palestinian Children",
                 "description1": "تستمر إسرائيل في احتجاز الأطفال الفلسطينيين في السجون العسكرية، حيث يتم محاكمتهم أمام محاكم عسكرية. كثير من هؤلاء الأطفال يتم اعتقالهم من منازلهم ليلاً وتعرضهم للاعتداءات الجسدية والنفسية أثناء الاعتقال.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Defense for Children International - Palestine", "url": "https://www.dci-palestine.org/"},
                     {"name": "Amnesty International", "url": "https://www.amnesty.org/en/countries/middle-east-and-north-africa/israel-and-occupied-palestinian-territories/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -605,6 +608,7 @@ def get_educational_resources_AR():
                 "title": "Israeli Settler Violence Against Palestinians",
                 "description1": "العنف من قبل المستوطنين الإسرائيليين ضد الفلسطينيين يشمل الهجمات على الأشخاص والممتلكات. تتصاعد هذه الهجمات في الأراضي الفلسطينية المحتلة دون محاسبة، حيث تشهد المنطقة انتهاكات لحقوق الإنسان يومية.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Human Rights Watch", "url": "https://www.hrw.org/middle-east/north-africa/israel/palestine"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -622,6 +626,7 @@ def get_educational_resources_AR():
                 "title": "Palestinian Cultural Heritage and Identity",
                 "description1": "تتميز الثقافة الفلسطينية بتاريخ طويل من الفنون، والموسيقى، والآداب، والحرف اليدوية. رغم كل محاولات الطمس الثقافي، ظل الفلسطينيون يتمسكون بهويتهم من خلال الاحتفاظ بتقاليدهم وأغانيهم ورقصاتهم.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Palestinian Museum", "url": "https://www.palmuseum.org/"},
                     {"name": "Palestinian Heritage Foundation", "url": "https://www.palestinianheritage.org/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -637,6 +642,7 @@ def get_educational_resources_AR():
                 "title": "Palestinian Literature and Poetry",
                 "description1": "الأدب الفلسطيني يزخر بالكثير من الأعمال التي تعكس معاناة الشعب الفلسطيني وتاريخه. من بين أبرز الكتاب والشعراء الفلسطينيين: محمود درويش وغسان كنفاني.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Maqalati", "url": "https://www.maqalati.com/"},
                     {"name": "Palestinian Writers Union", "url": "https://www.pwu.ps/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -654,6 +660,7 @@ def get_educational_resources_AR():
                 "title": "The Palestinian Resistance Movement",
                 "description1": "تشكلت حركات المقاومة الفلسطينية منذ بداية الاحتلال الإسرائيلي، وهي تشمل العديد من الفصائل التي تسعى لاسترجاع حقوق الفلسطينيين وإنهاء الاحتلال.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"﴿,
                     {"name": "Palestinian Authority", "url": "https://www.palestine.gov/"},
                     {"name": "Al-Qassam Brigades", "url": "https://www.qassam.ps/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -669,6 +676,7 @@ def get_educational_resources_AR():
                 "title": "Non-Violent Resistance: Popular Struggle",
                 "description1": "يشمل النضال الشعبي الفلسطيني أساليب غير عنيفة مثل التظاهرات، والإضرابات، ووقفات الاحتجاج ضد الاحتلال الإسرائيلي والمستوطنات.",
                 "sources": [
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Palestinian Center for Nonviolence", "url": "https://www.palestiniannonviolence.org/"},
                     {"name": "International Solidarity Movement", "url": "https://palsolidarity.org/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -691,6 +699,7 @@ def get_educational_resources_EN():
                 "title": "The Nakba: Palestinian Exodus of 1948",
                 "description": "The Nakba (catastrophe in Arabic) refers to the mass expulsion and dispossession of Palestinians during the creation of the State of Israel in 1948. Over 750,000 Palestinians were forced to leave their homes, and more than 500 Palestinian villages were destroyed.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Institute for Palestine Studies", "url": "https://www.palestine-studies.org/"},
                     {"name": "UN Archives", "url": "https://archives.un.org/"},
                     {"name": "Palestinian Journeys", "url": "https://www.paljourneys.org/en/timeline/highlight/165/nakba"}
@@ -721,6 +730,7 @@ def get_educational_resources_EN():
                 "title": "The Oslo Accords and the Failure of the Peace Process",
                 "description": "The Oslo Accords, signed in 1993-1995, were supposed to lead to a two-state solution within a five-year timeframe. However, they failed due to continued Israeli settlement expansion, violations of the agreements, and lack of political will to resolve fundamental issues such as Jerusalem, refugees, and borders.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Oslo Accords documents", "url": "https://peacemaker.un.org/israelopt-osloaccord93"},
                     {"name": "United Nations", "url": "https://www.un.org/unispal/"},
                     {"name": "Al Jazeera", "url": "https://www.aljazeera.com/features/2013/9/13/oslo-accords-the-road-to-nowhere"}
@@ -755,6 +765,7 @@ def get_educational_resources_EN():
                 "title": "The Apartheid System in Occupied Palestine",
                 "description": "Numerous human rights organizations, including Amnesty International, Human Rights Watch, and B'Tselem, have concluded that Israel practices apartheid against Palestinians. This system includes discriminatory laws, territorial segregation, movement restrictions, and unequal allocation of resources.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Amnesty International", "url": "https://www.amnesty.org/en/latest/campaigns/2022/02/israels-system-of-apartheid/"},
                     {"name": "Human Rights Watch", "url": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/publications/fulltext/202101_this_is_apartheid"},
@@ -770,7 +781,8 @@ def get_educational_resources_EN():
             {
                 "title": "Administrative Detention and Political Prisoners",
                 "description": "Israel extensively uses administrative detention to imprison Palestinians without charge or trial, based on 'secret evidence.' Thousands of Palestinians, including children, are detained in conditions that often violate international law.",
-                "sources": [
+                "sources": [ 
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Addameer", "url": "https://www.addameer.org/"},
                     {"name": "International Committee of the Red Cross", "url": "https://www.icrc.org/en/where-we-work/middle-east/israel-and-occupied-territories"},
                     {"name": "UNICEF", "url": "https://www.unicef.org/sop/"}
@@ -801,6 +813,7 @@ def get_educational_resources_EN():
                 "title": "Home Demolitions and Forced Displacement",
                 "description": "Israel regularly practices Palestinian home demolitions, either as punitive measures or under the pretext of lacking building permits (which are systematically denied to Palestinians). These practices constitute serious violations of international humanitarian law.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "OCHA", "url": "https://www.ochaopt.org/data/demolition"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/topic/planning_and_building"},
                     {"name": "Al-Haq", "url": "https://www.alhaq.org/"},
@@ -819,6 +832,7 @@ def get_educational_resources_EN():
                 "title": "Palestinian Cultural Heritage",
                 "description": "Palestinian culture is rich and diverse, with traditions dating back thousands of years. It includes distinctive cuisine, traditional arts such as embroidery, pottery, and calligraphy, as well as a rich literary and musical tradition.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Arab World Institute", "url": "https://www.imarabe.org/en"},
                     {"name": "Palestinian Museum", "url": "https://www.palmuseum.org/"},
                     {"name": "UNESCO", "url": "https://en.unesco.org/countries/palestine"}
@@ -881,6 +895,7 @@ def get_educational_resources_EN():
                 "title": "The BDS Movement (Boycott, Divestment, Sanctions)",
                 "description": "Launched in 2005 by Palestinian civil society, the BDS movement calls for non-violent measures to pressure Israel to comply with international law and Palestinian rights. Inspired by the South African anti-apartheid movement, it has gained significant global support.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "BDS National Committee", "url": "https://bdsmovement.net/"},
                     {"name": "Palestinian Campaign for the Academic and Cultural Boycott of Israel (PACBI)", "url": "https://bdsmovement.net/pacbi"}
                 ],
@@ -910,6 +925,7 @@ def get_educational_resources_EN():
                 "title": "International Solidarity",
                 "description": "The solidarity movement with Palestine has developed globally, involving civil society organizations, unions, religious groups, students, and human rights activists who support the Palestinian struggle for justice and self-determination.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "Palestine Solidarity Campaign", "url": "https://www.palestinecampaign.org/"},
                     {"name": "Jewish Voice for Peace", "url": "https://jewishvoiceforpeace.org/"},
                     {"name": "BDS Movement", "url": "https://bdsmovement.net/"}
@@ -925,6 +941,7 @@ def get_educational_resources_EN():
                 "title": "International Recognition of the State of Palestine",
                 "description": "The diplomatic struggle for recognition of the State of Palestine is an important form of political resistance. To date, more than 140 countries have recognized the State of Palestine, although most Western powers have not yet done so.",
                 "sources": [
+                    {"name": "quds info", "url": "https://qudsinfo.com/"},
                     {"name": "United Nations", "url": "https://www.un.org/unispal/"},
                     {"name": "Palestine Liberation Organization", "url": "https://www.nad.ps/en"},
                     {"name": "Palestinian Ministry of Foreign Affairs", "url": "http://www.mofa.pna.ps/en/"}
@@ -1263,9 +1280,9 @@ def main():
         else:  # Arabic
             st.markdown("""
             <div dir="rtl" style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                <h2 style="font-weight: 700; color: #1f77b4; margin-bottom: 17px;">Chat with AI about Palestine</h2>
-                <h3 style="font-weight: 600; margin-top: 15px; margin-bottom: 10px;">Ask Your Question</h3>
-                <p style="font-size: 1.05em;"> احصل على معلومات دقيقة ومفصلة حول تاريخ فلسطين والأحداث الجارية باستعمال الذكاء الاصطناعي.</p>
+            <h2 style="font-weight: 700; color: #1f77b4; margin-bottom: 17px;">Chat with AI about Palestine</h2>
+            <h3 style="font-weight: 600; margin-top: 15px; margin-bottom: 10px;">Ask Your Question</h3>
+            <p style="font-size: 1.05em;"> احصل على معلومات دقيقة ومفصلة حول تاريخ فلسطين والأحداث الجارية باستعمال الذكاء الاصطناعي.</p>
             </div>
             """, unsafe_allow_html=True)
             
@@ -1317,9 +1334,9 @@ def main():
                         with st.expander(f"{company['name']}", expanded=False):
                             st.markdown(f"""
                             <div style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                                <p style="margin-bottom: 10px;"><strong style="color: #d62728; font-weight: 600;">Reason for boycott:</strong> {company['reason']}</p>
-                                <p style="margin-bottom: 10px;"><strong style="color: #2ca02c; font-weight: 600;">Recommended action:</strong> {company['action']}</p>
-                                <p><strong style="color: #1f77b4; font-weight: 600;">Alternatives:</strong> {', '.join(company['alternatives'])}</p>
+                            <p style="margin-bottom: 10px;"><strong style="color: #d62728; font-weight: 600;">Reason for boycott:</strong> {company['reason']}</p>
+                            <p style="margin-bottom: 10px;"><strong style="color: #2ca02c; font-weight: 600;">Recommended action:</strong> {company['action']}</p>
+                            <p><strong style="color: #1f77b4; font-weight: 600;">Alternatives:</strong> {', '.join(company['alternatives'])}</p>
                             </div>
                             """, unsafe_allow_html=True)
             
@@ -1327,12 +1344,12 @@ def main():
             <h3 style="font-weight: 700; color: #1f77b4; margin: 20px 0 15px 0;">How to Support Gaza</h3>
             
             <ol style="padding-left: 20px; margin-bottom: 20px;">
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Boycott Products</strong>: Avoid purchasing products from companies supporting Israel</li>
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Choose Alternatives</strong>: Use the suggested alternatives or find local options</li>
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Raise Awareness</strong>: Share information about the situation in Gaza</li>
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Donate</strong>: Support humanitarian organizations working in Gaza</li>
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Advocate</strong>: Contact your representatives to demand action</li>
-                <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Join Protests</strong>: Participate in peaceful demonstrations</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Boycott Products</strong>: Avoid purchasing products from companies supporting Israel</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Choose Alternatives</strong>: Use the suggested alternatives or find local options</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Raise Awareness</strong>: Share information about the situation in Gaza</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Donate</strong>: Support humanitarian organizations working in Gaza</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Advocate</strong>: Contact your representatives to demand action</li>
+            <li style="margin-bottom: 8px;"><strong style="font-weight: 600;">Join Protests</strong>: Participate in peaceful demonstrations</li>
             </ol>
             
             <p style="font-size: 1.05em; line-height: 1.6; font-style: italic;">Remember that economic pressure through boycotts has historically been an effective non-violent resistance strategy.</p>
@@ -1381,7 +1398,7 @@ def main():
                 with tab:
                     st.markdown(f"""
                     <div dir="rtl" style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                        <h3 style="font-weight: 700; color: #1f77b4; margin-bottom: 15px;">{category}</h3>
+                    <h3 style="font-weight: 700; color: #1f77b4; margin-bottom: 15px;">{category}</h3>
                     </div>
                     """, unsafe_allow_html=True)
                     
@@ -1389,9 +1406,9 @@ def main():
                         with st.expander(f"{company['name']}", expanded=False):
                             st.markdown(f"""
                             <div dir="rtl" style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                                <p style="margin-bottom: 10px;"><strong style="color: #d62728; font-weight: 600;">سبب المقاطعة:</strong> {company['reason1']}</p>
-                                <p style="margin-bottom: 10px;"><strong style="color: #2ca02c; font-weight: 600;">الإجراء الموصى به:</strong> {company['action1']}</p>
-                                <p><strong style="color: #1f77b4; font-weight: 600;">البدائل:</strong> {', '.join(company['alternatives1'])}</p>
+                            <p style="margin-bottom: 10px;"><strong style="color: #d62728; font-weight: 600;">سبب المقاطعة:</strong> {company['reason1']}</p>
+                            <p style="margin-bottom: 10px;"><strong style="color: #2ca02c; font-weight: 600;">الإجراء الموصى به:</strong> {company['action1']}</p>
+                            <p><strong style="color: #1f77b4; font-weight: 600;">البدائل:</strong> {', '.join(company['alternatives1'])}</p>
                             </div>
                             """, unsafe_allow_html=True)
             
@@ -1454,8 +1471,8 @@ def main():
                             <div style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
                                 <p style="font-size: 1.05em; text-align: justify; margin-bottom: 15px;">{resource['description']}</p>
                                 
-                                <h4 style="font-weight: 600; color: #2ca02c; margin: 15px 0 10px 0;">Key Facts:</h4>
-                                <ul style="padding-left: 20px; margin-bottom: 15px;">
+                             <h4 style="font-weight: 600; color: #2ca02c; margin: 15px 0 10px 0;">Key Facts:</h4>
+                             <ul style="padding-left: 20px; margin-bottom: 15px;">
                             """, unsafe_allow_html=True)
                             
                             for fact in resource['key_facts']:
@@ -1464,10 +1481,10 @@ def main():
                                 """, unsafe_allow_html=True)
                             
                             st.markdown(f"""
-                                </ul>
+                            </ul>
                                 
-                                <h4 style="font-weight: 600; color: #2ca02c; margin: 15px 0 10px 0;">Sources:</h4>
-                                <ul style="padding-left: 20px;">
+                            <h4 style="font-weight: 600; color: #2ca02c; margin: 15px 0 10px 0;">Sources:</h4>
+                            <ul style="padding-left: 20px;">
                             """, unsafe_allow_html=True)
                             
                             for source in resource['sources']:
@@ -1476,7 +1493,7 @@ def main():
                                 """, unsafe_allow_html=True)
                                 
                             st.markdown("""
-                                </ul>
+                            </ul>
                             </div>
                             """, unsafe_allow_html=True)
             
@@ -1532,7 +1549,7 @@ def main():
                 with tab:
                     st.markdown(f"""
                     <div dir="rtl" style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                        <h3 style="font-weight: 700; color: #1f77b4; margin-bottom: 15px;">{category}</h3>
+                    <h3 style="font-weight: 700; color: #1f77b4; margin-bottom: 15px;">{category}</h3>
                     </div>
                     """, unsafe_allow_html=True)
                     
@@ -1540,7 +1557,7 @@ def main():
                         with st.expander(f"{resource['title']}", expanded=False):
                             st.markdown(f"""
                             <div dir="rtl" style="font-family: 'Arial', 'Helvetica', sans-serif; line-height: 1.6;">
-                                <p style="font-size: 1.05em; text-align: right; margin-bottom: 15px;">{resource['description1']}</p>
+                            <p style="font-size: 1.05em; text-align: right; margin-bottom: 15px;">{resource['description1']}</p>
                             </div>
                             """, unsafe_allow_html=True)
                             
