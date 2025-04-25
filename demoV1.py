@@ -554,7 +554,7 @@ def get_educational_resources_AR():
                 "title": "The Nakba: Palestinian Exodus of 1948",
                 "description1": "النكبة (كارثة بالعربية) تشير إلى التهجير الجماعي وتجريد الفلسطينيين من ممتلكاتهم أثناء إنشاء دولة إسرائيل في عام 1948. أُجبر أكثر من 750,000 فلسطيني على مغادرة منازلهم، وتم تدمير أكثر من 500 قرية فلسطينية.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Institute for Palestine Studies", "url": "https://www.palestine-studies.org/"},
                     {"name": "UN Archives", "url": "https://archives.un.org/"},
                     {"name": "Palestinian Journeys", "url": "https://www.paljourneys.org/en/timeline/highlight/165/nakba"},
@@ -572,7 +572,7 @@ def get_educational_resources_AR():
                 "title": "The 1967 Occupation and Its Consequences",
                 "description1": "في يونيو 1967، احتلت إسرائيل الضفة الغربية، والقدس الشرقية، وقطاع غزة، ومرتفعات الجولان، وشبه جزيرة سيناء خلال حرب الأيام الستة. هذا الاحتلال، الذي لا يزال مستمرًا حتى اليوم (باستثناء سيناء)، أدى إلى توسع المستوطنات الإسرائيلية غير القانونية ونظام من السيطرة العسكرية على السكان الفلسطينيين.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "United Nations", "url": "https://www.un.org/unispal/"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/"},
                     {"name": "Human Rights Watch", "url": "https://www.hrw.org/middle-east/north-africa/israel/palestine"},
@@ -592,7 +592,7 @@ def get_educational_resources_AR():
                 "title": "Israeli Military Detention of Palestinian Children",
                 "description1": "تستمر إسرائيل في احتجاز الأطفال الفلسطينيين في السجون العسكرية، حيث يتم محاكمتهم أمام محاكم عسكرية. كثير من هؤلاء الأطفال يتم اعتقالهم من منازلهم ليلاً وتعرضهم للاعتداءات الجسدية والنفسية أثناء الاعتقال.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Defense for Children International - Palestine", "url": "https://www.dci-palestine.org/"},
                     {"name": "Amnesty International", "url": "https://www.amnesty.org/en/countries/middle-east-and-north-africa/israel-and-occupied-palestinian-territories/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -608,7 +608,7 @@ def get_educational_resources_AR():
                 "title": "Israeli Settler Violence Against Palestinians",
                 "description1": "العنف من قبل المستوطنين الإسرائيليين ضد الفلسطينيين يشمل الهجمات على الأشخاص والممتلكات. تتصاعد هذه الهجمات في الأراضي الفلسطينية المحتلة دون محاسبة، حيث تشهد المنطقة انتهاكات لحقوق الإنسان يومية.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Human Rights Watch", "url": "https://www.hrw.org/middle-east/north-africa/israel/palestine"},
                     {"name": "B'Tselem", "url": "https://www.btselem.org/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -626,7 +626,7 @@ def get_educational_resources_AR():
                 "title": "Palestinian Cultural Heritage and Identity",
                 "description1": "تتميز الثقافة الفلسطينية بتاريخ طويل من الفنون، والموسيقى، والآداب، والحرف اليدوية. رغم كل محاولات الطمس الثقافي، ظل الفلسطينيون يتمسكون بهويتهم من خلال الاحتفاظ بتقاليدهم وأغانيهم ورقصاتهم.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Palestinian Museum", "url": "https://www.palmuseum.org/"},
                     {"name": "Palestinian Heritage Foundation", "url": "https://www.palestinianheritage.org/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -642,7 +642,7 @@ def get_educational_resources_AR():
                 "title": "Palestinian Literature and Poetry",
                 "description1": "الأدب الفلسطيني يزخر بالكثير من الأعمال التي تعكس معاناة الشعب الفلسطيني وتاريخه. من بين أبرز الكتاب والشعراء الفلسطينيين: محمود درويش وغسان كنفاني.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"},
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Maqalati", "url": "https://www.maqalati.com/"},
                     {"name": "Palestinian Writers Union", "url": "https://www.pwu.ps/"},
                     {"name": "Metras", "url": "https://metras.co"},
@@ -660,7 +660,7 @@ def get_educational_resources_AR():
                 "title": "The Palestinian Resistance Movement",
                 "description1": "تشكلت حركات المقاومة الفلسطينية منذ بداية الاحتلال الإسرائيلي، وهي تشمل العديد من الفصائل التي تسعى لاسترجاع حقوق الفلسطينيين وإنهاء الاحتلال.",
                 "sources": [
-                    {"name": "القدس إنفو - أكبر موقع مقدسي موقف على الانترنت", "url": "https://qudsinfo.com/"﴿,
+                    {"name": "القدس إنفو - أكبر موقع مقدسي موثق على الانترنت", "url": "https://qudsinfo.com/"},
                     {"name": "Palestinian Authority", "url": "https://www.palestine.gov/"},
                     {"name": "Al-Qassam Brigades", "url": "https://www.qassam.ps/"},
                     {"name": "Metras", "url": "https://metras.co"},
