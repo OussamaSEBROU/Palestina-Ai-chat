@@ -13,7 +13,10 @@ genai.configure(api_key=google_api_key)
 
 # Load Gemini models
 model_text = genai.GenerativeModel(
-    model_name="gemini-2.0-flash-thinking-exp-01-21",
+    #     model_name="gemini-2.0-flash-thinking-exp-01-21",
+
+
+    model_name="gemini-2.5-flash-lite",
     generation_config=genai.types.GenerationConfig(
         temperature=0.7,
         top_p=0.95,
